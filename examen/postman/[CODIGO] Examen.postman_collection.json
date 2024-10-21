@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "e2c3e747-39fd-4252-8b07-4391e70668f8",
+		"name": "[CODIGO] Examen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31318077"
+	},
+	"item": [
+		{
+			"name": "crearPersona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombres\": \"Juan\",\r\n  \"apellidos\": \"Pérez\",\r\n  \"nroDocumento\": \"12345678\",\r\n  \"estado\": \"Activo\",\r\n  \"direccion\": {\r\n    \"avenida\": \"Av. Siempre Viva\",\r\n    \"numero\": 742,\r\n    \"distrito\": \"Springfield\",\r\n    \"provincia\": \"Illinois\",\r\n    \"departamento\": \"USA\"\r\n  },\r\n  \"pedidos\": [\r\n    {\r\n      \"descripcion\": \"Compra de zapatillas\",\r\n      \"cantidad\": 2,\r\n      \"estado\": \"Pendiente\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/crearPersona",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						"crearPersona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearPedido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\": \"Mouse\",\r\n    \"cantidad\": 10,\r\n    \"estado\": \"Confirmado\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidos/v1/crearPedido/persona/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"v1",
+						"crearPedido",
+						"persona",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarTodos (Persona)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/buscarTodos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						"buscarTodos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarTodos (Pedidos)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidos/v1/buscarTodos?estado=Confirmado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"v1",
+						"buscarTodos"
+					],
+					"query": [
+						{
+							"key": "estado",
+							"value": "Confirmado"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarPersonaXnumDocumento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/buscarPersonaXnumDocumento?numDocumento=12345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						"buscarPersonaXnumDocumento"
+					],
+					"query": [
+						{
+							"key": "numDocumento",
+							"value": "12345678"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarPedidoPorParametro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidos/v1/buscarPedidoPorParametro?id=7&estado=Proceso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"v1",
+						"buscarPedidoPorParametro"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						},
+						{
+							"key": "estado",
+							"value": "Proceso"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarPersona",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"nombres\": \"Juan\",\r\n    \"apellidos\": \"Pérez Gonzales\",\r\n    \"nroDocumento\": \"12345678\",\r\n    \"estado\": \"Activo\",\r\n    \"direccion\": {\r\n        \"id\": 4,\r\n        \"avenida\": \"Av. Modificada\",\r\n        \"numero\": 123,\r\n        \"distrito\": \"Jesús María\",\r\n        \"provincia\": \"Lima\",\r\n        \"departamento\": \"Lima\"\r\n    },\r\n    \"pedidos\": [\r\n        {\r\n            \"id\": 1,\r\n            \"descripcion\": \"Pedido 1\",\r\n            \"cantidad\": 2,\r\n            \"estado\": \"Proceso\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"descripcion\": \"Pedido 2\",\r\n            \"cantidad\": 1,\r\n            \"estado\": \"Confirmado\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/actualizarPersona/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						"actualizarPersona",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarPedido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"descripcion\": \"Teclado mecánico\",\r\n  \"cantidad\": 5,\r\n  \"estado\": \"Confirmado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidos/v1/actualizarPedido/10/persona/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"v1",
+						"actualizarPedido",
+						"10",
+						"persona",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarPersona",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"nombres\": \"Juan\",\r\n    \"apellidos\": \"Pérez Gonzales\",\r\n    \"nroDocumento\": \"12345678\",\r\n    \"estado\": \"Activo\",\r\n    \"direccion\": {\r\n        \"id\": 4,\r\n        \"avenida\": \"Av. Modificada\",\r\n        \"numero\": 123,\r\n        \"distrito\": \"Jesús María\",\r\n        \"provincia\": \"Lima\",\r\n        \"departamento\": \"Lima\"\r\n    },\r\n    \"pedidos\": [\r\n        {\r\n            \"id\": 1,\r\n            \"descripcion\": \"Pedido 1\",\r\n            \"cantidad\": 2,\r\n            \"estado\": \"Proceso\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"descripcion\": \"Pedido 2\",\r\n            \"cantidad\": 1,\r\n            \"estado\": \"Confirmado\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/v1/eliminarPersona/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"v1",
+						"eliminarPersona",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarPedido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"nombres\": \"Juan\",\r\n    \"apellidos\": \"Pérez Gonzales\",\r\n    \"nroDocumento\": \"12345678\",\r\n    \"estado\": \"Activo\",\r\n    \"direccion\": {\r\n        \"id\": 4,\r\n        \"avenida\": \"Av. Modificada\",\r\n        \"numero\": 123,\r\n        \"distrito\": \"Jesús María\",\r\n        \"provincia\": \"Lima\",\r\n        \"departamento\": \"Lima\"\r\n    },\r\n    \"pedidos\": [\r\n        {\r\n            \"id\": 1,\r\n            \"descripcion\": \"Pedido 1\",\r\n            \"cantidad\": 2,\r\n            \"estado\": \"Proceso\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"descripcion\": \"Pedido 2\",\r\n            \"cantidad\": 1,\r\n            \"estado\": \"Confirmado\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidos/v1/eliminarPedido/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"v1",
+						"eliminarPedido",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
