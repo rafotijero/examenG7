@@ -1,4 +1,4 @@
-# examenG7
+# ExamenG7 - Gestor de Personas, Direcciones y Pedidos
 
 Este proyecto proporciona una API RESTful para gestionar direcciones, pedidos y personas. Permite a los usuarios crear, actualizar, eliminar y recuperar datos relacionados con estas entidades, asegurando la integridad y validación de los datos.
 
