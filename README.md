@@ -22,8 +22,7 @@ Este proyecto proporciona una API RESTful para gestionar direcciones, pedidos y 
 - Java 17
 - Spring Boot
 - Spring Data JPA
-- Hibernate
-- MySQL (o cualquier otra base de datos compatible)
+- Postgresql (o cualquier otra base de datos compatible)
 
 ## Cómo Empezar
 
