@@ -22,7 +22,7 @@ Este proyecto proporciona una API RESTful para gestionar direcciones, pedidos y 
 - Java 17
 - Spring Boot
 - Spring Data JPA
-- Postgresql (o cualquier otra base de datos compatible)
+- PostgreSql (o cualquier otra base de datos compatible)
 
 ## Cómo Empezar
 
@@ -30,7 +30,7 @@ Este proyecto proporciona una API RESTful para gestionar direcciones, pedidos y 
 
 - JDK 17
 - Maven
-- Base de Datos MySQL
+- PostgreSql
 
 ### Instalación
 
